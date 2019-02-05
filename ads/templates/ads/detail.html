@@ -1,0 +1,17 @@
+{% extends 'ads/base.html' %}
+
+{% block content %}
+<body>
+	<p>
+<b>Title:</b> <p>{{detail.title}}</p>
+<b>Description: </b><p>{{detail.description}}</p>
+<b>Price: </b><p>{{detail.price}}</p>
+<b>Phone: </b><p>{{detail.phone}}</p>
+<b>City: </b><p>{{detail.city}}</p>
+<b>Province:</b> <p>{{detail.province}}</p>
+<p><img src="{{detail.images}}"></p>
+	</p>
+</body>
+
+
+{% endblock %}

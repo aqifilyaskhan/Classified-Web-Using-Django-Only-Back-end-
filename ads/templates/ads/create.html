@@ -1,0 +1,90 @@
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+
+<style>
+table {
+	margin: 0% 10% 10% 10%;
+	text-align: center;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 70%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<body>
+<blockquote>
+  Your account verified.<br/>
+  Please fill below details.
+</blockquote>
+<form method="Post" action="{% url 'create' %}"  enctype="multipart/form-data">
+{% csrf_token %}
+<h2>Sign Up Form:</h2>
+
+<table>
+  <tr>
+    <th>Labels</th>
+    <th>Fields</th>
+  </tr>
+ <tr>
+    <td>Title:</td>
+    <td><input type="text" name="title"></td>
+  </tr>
+  <tr>
+    <td>Description:</td>
+    <td><input type="text" name="description"></td>
+  </tr>
+  <tr>
+    <td>Category:</td>
+    <td>
+    	<select name="cat">
+    		<option value='1'>1</option>
+    		<option value='2'>2</option>
+    		<option value='3'>3</option>
+    		<option value='4'>4</option>
+    		<option value='5'>5</option>
+    		<option value='6'>6</option>
+    		<option value='7'>7</option>
+    	</select>
+    </td>
+  </tr>
+  <tr>
+    <td>images:</td>
+    <td><input type="file" name="image"/></td>
+  </tr>
+  <tr>
+    <td>Price:</td>
+    <td><input type="text" name="price"></td>
+  </tr>
+  <tr>
+    <td>Phone:</td>
+    <td><input type="text" name="phone"></td>
+  </tr>
+  <tr>
+    <td>City:</td>
+    <td><input type="text" name="city"></td>
+  </tr>
+  <tr>
+    <td>Province:</td>
+    <td><input type="text" name="province"></td>
+  </tr>
+  <tr>
+    <td>Post Your Ad: </td>
+    <td><input type="reset" name="reset" value="Reset Form">
+    	<input type="submit" name="submit" value="Sign Up Here"></td>
+</form>
+  </tr>
+</table>
+</body>
+</html>
+<!-- <style type="text/css">td{width: 40%}</style> -->
+{% endblock %}

@@ -1,0 +1,39 @@
+{% load staticfiles %}	
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hi</title>
+</head>
+<body>
+<header>
+	<nav>
+		<ul>
+			<li>Home</li>
+{% if user.is_authenticated %}
+<li><a href="javascript:{document.getElementById('logout').submit()}">Logout</a></li>
+<form method="post" action="{% url 'logout' %}" id="logout">
+{% csrf_token %}
+<input type="hidden">
+</form>
+			<li><a href="/#">Create Ad</a></li>
+{% else %}
+			<li><a href="{% url 'login' %}">Login</a></li>
+			<li><a href="{% url 'signup' %}">Signup</a></li>
+{% endif %}
+		</ul>
+	</nav>
+</header>
+
+{% block content %}
+
+
+{% endblock %}
+<footer>
+	<center>2019 All Rights Reserved.</center>
+</footer>
+<style type="text/css">
+li{display:inline-block; width: 100px;background:#c6c6c6;
+}
+</style>
+</body>
+</html>

@@ -1,0 +1,60 @@
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+
+<style>
+table {
+	margin: 0% 10% 10% 10%;
+	text-align: center;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 70%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<body>
+<blockquote>
+  Your account verified.<br/>
+  Please fill below details.
+</blockquote>
+<form method="POST" action="{% url 'signup2' %}" ">
+{% csrf_token %}
+<h2>Sign Up Form:</h2>
+
+<table>
+  <tr>
+    <th>Labels</th>
+    <th>Fields</th>
+  </tr>
+ <tr>
+    <td>Phone:</td>
+    <td><input type="text" name="phone"></td>
+  </tr>
+  <tr>
+    <td>City:</td>
+    <td><input type="text" name="city"></td>
+  </tr>
+  <tr>
+    <td>Province:</td>
+    <td><input type="text" name="province"></td>
+  </tr>
+  <tr>
+    <td>Reset: </td>
+    <td><input type="reset" name="reset" value="Reset Form">
+    	<input type="submit" name="submit" value="Sign Up Here"></td>
+  </tr>
+</table>
+</form>
+</body>
+</html>
+<!-- <style type="text/css">td{width: 40%}</style> -->
+{% endblock %}
